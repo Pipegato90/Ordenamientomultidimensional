@@ -1,0 +1,32 @@
+def busqueda_en_matriz(matriz, valor):
+    # Iterar a través de cada fila y cada columna de la matriz
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            # Comprobar si el valor actual es el valor que buscamos
+            if matriz[i][j] == valor:
+                return (i, j)  # Devolver la posición (fila, columna)
+    return None  # Si no se encontró el valor
+
+def main():
+    # Definir una matriz 3x3 con valores numéricos
+    matriz = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+
+    # Definir el valor a buscar
+    valor_a_buscar = 5
+
+    # Llamar a la función de búsqueda
+    resultado = busqueda_en_matriz(matriz, valor_a_buscar)
+
+    # Mostrar el resultado de la búsqueda
+    if resultado is not None:
+        print(f"El valor {valor_a_buscar} se encontró en la posición: {resultado} (fila, columna)")
+    else:
+        print(f"El valor {valor_a_buscar} no se encontró en la matriz.")
+
+if __name__ == "__main__":
+    main()
+
